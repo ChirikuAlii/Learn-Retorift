@@ -13,7 +13,13 @@ import java.util.List;
 
 public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
 
-    List<DogsResponse> dogsList;
+
+    List<String> dogsList;
+
+    public DogAdapter(List<String> dogsList) {
+        this.dogsList = dogsList;
+    }
+
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,8 +33,8 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        DogsResponse dogs = dogsList.get(position);
-        holder.bind(dogs);
+        String dogs = dogsList.get(position);
+        holder.bind(dogs,position);
     }
 
 
@@ -44,11 +50,18 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
             imageView = itemView.findViewById(R.id.imgView);
         }
 
-        public void bind(DogsResponse dogs) {
+        public void bind(String dog, int position) {
 
             Glide.with(itemView)
-                    .load(dogs.getMessage());
+                    .load(dog)
+                    .into(imageView);
+
+
+
+
+
 
         }
     }
+
 }

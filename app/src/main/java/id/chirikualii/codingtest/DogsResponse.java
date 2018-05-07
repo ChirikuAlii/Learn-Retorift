@@ -12,7 +12,7 @@ public class DogsResponse implements Serializable {
     private String status;
     @SerializedName("message")
     @Expose
-    private List<Dog> message = null;
+    private List<String> message = null;
 
 
     public String getStatus() {
@@ -23,11 +23,11 @@ public class DogsResponse implements Serializable {
         this.status = status;
     }
 
-    public List<Dog> getMessage() {
+    public List<String> getMessage() {
         return message;
     }
 
-    public void setMessage(List<Dog> message) {
+    public void setMessage(List<String> message) {
         this.message = message;
     }
 }
