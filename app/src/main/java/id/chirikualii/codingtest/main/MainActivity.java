@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements IMainView  {
 
     @Override
     public void setOnError() {
-
+        Toast.makeText(this, "Data gagal di load", Toast.LENGTH_SHORT).show();
     }
 
     @Override
