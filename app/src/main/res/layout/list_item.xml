@@ -9,9 +9,4 @@
         android:id="@+id/imgView"
         android:layout_width="150dp"
         android:layout_height="150dp" />
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </FrameLayout>

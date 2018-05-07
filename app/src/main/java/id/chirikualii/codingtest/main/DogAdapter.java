@@ -1,4 +1,4 @@
-package id.chirikualii.codingtest;
+package id.chirikualii.codingtest.main;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import id.chirikualii.codingtest.R;
 
 public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
 
@@ -34,7 +36,7 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         String dogs = dogsList.get(position);
-        holder.bind(dogs,position);
+        holder.bind(dogs);
     }
 
 
@@ -50,15 +52,11 @@ public class DogAdapter extends RecyclerView.Adapter<DogAdapter.Holder> {
             imageView = itemView.findViewById(R.id.imgView);
         }
 
-        public void bind(String dog, int position) {
+        public void bind(String dog) {
 
             Glide.with(itemView)
                     .load(dog)
                     .into(imageView);
-
-
-
-
 
 
         }
